@@ -39,6 +39,8 @@
 
     </head>
 
+    <?php session_start(); ?>
+
     <body id="page-top">
 
         <!-- Navigation -->
@@ -50,20 +52,27 @@
                 <a class="navbar-brand page-scroll" href="#page-top"  >Espill</a>
                 <div class="collapse navbar-collapse" id="navbarExample">
                     <ul class="navbar-nav ml-auto">
+                      <?php if(isset($_SESSION['email'])){
+			                  ?>
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#" data-toggle="modal" data-target="#login-modal">Login </a>
+                            <a class="nav-link page-scroll" href="logout.php">Logout</a>
+                        </li>
+                        <?php }else {?>
+                        <li class="nav-item">
+                          <a class="nav-link page-scroll" href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                        </li>
+                        <?php } ?>
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#aulaEspill">Aula Espill</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#about">¿Qué es Aula Espill?</a>
+                            <a class="nav-link page-scroll" href="#comoSon">¿Cómo son?</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#services">¿En qué consisten?</a>
+                            <a class="nav-link page-scroll" href="#cursos">Cursos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#portfolio">Cursos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#contact">Contacto</a>
+                            <a class="nav-link page-scroll" href="#contacto">Contacto</a>
                         </li>
                     </ul>
                 </div>
@@ -74,14 +83,14 @@
             <div class="modal-dialog">
                 <div class="loginmodal-container">
                     <h1>Iniciar sesión</h1><br>
-                    <form>
-                        <input type="text" name="user" placeholder="Username">
-                        <input type="password" name="pass" placeholder="Password">
-                        <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                    <form action="login.php">
+                        <input type="text" name="email" placeholder="Email">
+                        <input type="password" name="contrasena" placeholder="Contraseña">
+                        <input type="submit" name="login" class="login loginmodal-submit" value="Login" id="login">
                     </form>
 
                     <div class="login-help">
-                        <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                        <a href="loginForm.php">Register</a> - <a href="#">Forgot Password</a>
                     </div>
                 </div>
             </div>
@@ -98,20 +107,20 @@
             </div>
         </header>
 
-        <section class="bg-primary" id="about">
+        <section class="bg-primary" id="aulaEspill">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 text-center">
-                        <h2 class="section-heading text-white">We've got what you need!</h2>
+                        <h2 class="section-heading text-white">¿Qué es Aula Espill?</h2>
                         <hr class="light">
                         <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                        <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+                        <a href="loginForm.php" class="page-scroll btn btn-default btn-xl sr-button">Registrate!</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="services">
+        <section id="comoSon">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -154,7 +163,7 @@
             </div>
         </section>
 
-        <section class="no-padding" id="portfolio">
+        <section class="no-padding" id="cursos">
             <div class="container-fluid">
                 <div class="row no-gutter popup-gallery" id="divCursos">
 
@@ -171,7 +180,7 @@
             </div>
         </aside>
 
-        <section id="contact">
+        <section id="contacto">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 text-center">

@@ -7,7 +7,7 @@ function peticionCursos(){
   $.ajax({
     type: 'get',
     dataType: 'json',
-    url: 'http://localhost/api-slim/api.php/cursos',
+    url: 'http://localhost/api-slim/api-cursos.php/cursos',
     data: Curso,
     success: function(data) {
       procesarCursos(data)
