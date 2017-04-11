@@ -1,7 +1,9 @@
 $.getScript("app/model/curso.js", function(){
   peticionCursos();
 
-
+/*
+AÑADIR FUNCIÓN SWICH PARA QUE LLAME A UN LADO U OTRO
+*/
 
 function peticionCursos(){
   $.ajax({
@@ -10,13 +12,13 @@ function peticionCursos(){
     url: 'http://localhost/api-slim/api-cursos.php/cursos',
     data: Curso,
     success: function(data) {
-      procesarCursos(data)
+      procesarCursosIndex(data)
     }
   });
 }
 
 
-function procesarCursos(Curso){
+function procesarCursosIndex(Curso){
 
 $.each(Curso, function(index, curso){
 var nombre = curso.nombre;

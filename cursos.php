@@ -18,11 +18,11 @@
 
   </head>
   <body>
+
+
     <div class="container">
     	<div class="row">
-            <h2>Ecommerce Products Display Layout</h2>
-            <br>
-
+            
             <div class="col-sm-4">
                 <article class="col-item">
             		<div class="photo">
@@ -58,6 +58,7 @@
 
     	</div>
     </div>
+
 
     <script src="assets/lib/jquery/jquery.js"></script>
 
