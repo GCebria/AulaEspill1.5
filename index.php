@@ -164,11 +164,11 @@
         </section>
 
         <section class="no-padding" id="cursos">
-            <div class="container-fluid">
-                <div class="row no-gutter popup-gallery" id="cursosIndex">
+            <!--<div class="container-fluid">
+            --><div class="row no-gutter popup-gallery" id="cursosIndex">
 
                 </div>
-            </div>
+            <!--</div>-->
         </section>
 
         <aside class="bg-dark">
@@ -211,9 +211,9 @@
 
         <!-- Plugin JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-        <script src="assets/lib/scrollreveal/scrollreveal.min.js"></script>
+        <script src="assets/lib/scrollreveal/scrollreveal.min.js"></script><!--
         <script src="assets/lib/magnific-popup/jquery.magnific-popup.min.js"></script>
-
+-->
         <!-- Theme JavaScript -->
         <script src="js/creative.min.js"></script>
         <script src="./app/main.js"></script>

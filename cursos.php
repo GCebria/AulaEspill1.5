@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+
+<?php
+$id = $_GET['id'];
+$mysqli=mysqli_connect('localhost','root','','aulaespill');
+
+$query = "SELECT * FROM cursos WHERE id='$id'";
+$result = mysqli_query($mysqli,$query)or die(mysqli_error());
+$num_row = mysqli_num_rows($result);
+		$row=mysqli_fetch_array($result);
+		if( !$num_row >=1 ) {
+      echo 'error 500';
+		}
+?>
+
 <html lang="en">
 
 <head>
@@ -67,8 +81,34 @@
     <!-- Page Content -->
     <div class="container" >
 
-        <div class="row" id="cursoPrincipal">
-        
+      <div id="cursoPrincipal">
+            <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"><?= $row['nombre']?>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Item Row -->
+        <div class="row">
+
+            <div class="col-md-8">
+                <img class="img-responsive" src="<?= $row['foto']?>" alt="">
+            </div>
+
+            <div class="col-md-4">
+                <h3>Descripción del curso</h3>
+                <p><?= $row['descripcion']?></p>
+                <h3>Detalles</h3>
+                <ul>
+                  <li>Tutor: <?= $row['tutor']?></li>
+                    <li>Precio: <?= $row['precio']?> €</li>
+                    <li>Consectetur</li>
+                    <li>Adipiscing Elit</li>
+                </ul>
+                </div>
+          </div>
         </div>
 
         <div class="row" id="cursosCursos">

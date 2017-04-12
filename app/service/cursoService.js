@@ -1,7 +1,7 @@
 $.getScript("app/model/curso.js", function(){
   peticionCursos();
-
-  });
+/*  seleccionarCurso(1);
+  */});
 /*
 AÑADIR FUNCIÓN SWICH PARA QUE LLAME A UN LADO U OTRO
 */
@@ -20,11 +20,9 @@ function peticionCursos(){
 
 
 function procesarCursos(Curso){
-
-
 $.each(Curso, function(index, curso){
- var html = "<div class='col-lg-4 col-sm-6'>"+
-            "<a href="+curso.foto+" class='portfolio-box'>"+
+ var html = "<div class='col-lg-4 col-sm-6'  onclick='seleccionarCurso("+curso.id+")'>"+
+            "<a href='./cursos.php?id="+curso.id+"' class='portfolio-box'>"+
               "<img src="+curso.foto+" class='img-fluid' alt=''>"+
                 "<div class='portfolio-box-caption'>"+
                  "<div class='portfolio-box-caption-content'>"+
@@ -68,27 +66,28 @@ function seleccionarCurso(id){
 
 function cargarCursoSelecionado(curso){
 
-          var html = "<div class='col-lg-12'>"+
-                    "<h1 class=page-header>"+curso.nombre+
-                    "</h1>"+
-                "</div>"+
-
-         "<div class='row'>"+
-            "<div class='col-md-8'>"+
+          var html ="<div class='row'>"+
+                      "<div class='col-lg-12'>"+
+                        "<h1 class=page-header>"+curso.nombre+
+                        "</h1>"+
+                      "</div>"+
+                  "</div>"+
+                "<div class='row'>"+
+                  "<div class='col-md-8'>"+
                         "<img class='img-responsive' src="+curso.foto+" alt=''>"+
                       "</div>"+
                       "<div class='col-md-4'>"+
                     "<h3>Descripción del curso</h3>"+
                     "<p>"+curso.descripcion+"</p>"+
                     "<h3>Detalles del curso</h3>"+
-                    "<ul>"+
-                      "<li>Lorem Ipsum</li>"+
-                      "<li>Dolor Sit Amet</li>"+
-                      "<li>Consectetur</li>"+
-                      "<li>Adipiscing Elit</li>"+
-                  "</ul>"+
-              "</div>"+
-              "</div>";
+                      "<ul>"+
+                        "<li>Tutor: "+curso.tutor+"</li>"+
+                        "<li>Precio: "+curso.precio+" €</li>"+
+                        "<li>Consectetur</li>"+
+                        "<li>Adipiscing Elit</li>"+
+                      "</ul>"+
+                  "</div>"+
+                  "</div>";
 
 
       $("#cursoPrincipal").empty();
