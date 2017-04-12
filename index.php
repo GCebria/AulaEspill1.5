@@ -86,7 +86,7 @@
                     <form action="login.php">
                         <input type="text" name="email" placeholder="Email">
                         <input type="password" name="contrasena" placeholder="Contraseña">
-                        <input type="submit" name="login" class="login loginmodal-submit" value="Login" id="login">
+                        <input type="submit" name="login" class="btn btn-primary btn-xl" value="Login" id="login">
                     </form>
 
                     <div class="login-help">
@@ -102,7 +102,7 @@
                     <h1 id="homeHeading">Bienvenido a Aula Espill</h1>
                     <hr>
                     <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                    <a href="#about" class="btn btn-primary btn-xl page-scroll">Ir a cursos</a>
+                    <a href="cursos.php" class="btn btn-primary btn-xl page-scroll">Ir a cursos</a>
                 </div>
             </div>
         </header>
@@ -165,7 +165,7 @@
 
         <section class="no-padding" id="cursos">
             <div class="container-fluid">
-                <div class="row no-gutter popup-gallery" id="divCursos">
+                <div class="row no-gutter popup-gallery" id="cursosIndex">
 
                 </div>
             </div>
