@@ -10,6 +10,10 @@
   font-family: roboto;
 }
 
+.login-help{
+  text-align: center;
+}
+
 #login-error{
   color: red;
   text-align: center;
