@@ -52,15 +52,15 @@
                 <a class="navbar-brand page-scroll" href="#page-top"  >Espill</a>
                 <div class="collapse navbar-collapse" id="navbarExample">
                     <ul class="navbar-nav ml-auto">
-                      <?php if(isset($_SESSION['email'])){
+                      <?php if(!isset($_SESSION['email'])){
 			                  ?>
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="logout.php">Logout</a>
+                          <a class="nav-link page-scroll" data-toggle="modal" data-target="#login-modal">Login</a>
                         </li>
                         <?php }else {?>
-                        <li class="nav-item">
-                          <a class="nav-link page-scroll" href="#" data-toggle="modal" data-target="#login-modal">Login</a>
-                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link page-scroll" href="logout.php">Logout</a>
+                          </li>
                         <?php } ?>
                         <li class="nav-item">
                             <a class="nav-link page-scroll" href="#aulaEspill">Aula Espill</a>
@@ -79,14 +79,15 @@
             </div>
         </nav>
 
+
         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
             <div class="modal-dialog">
                 <div class="loginmodal-container">
                     <h1>Iniciar sesión</h1><br>
-                    <form action="login.php">
-                        <input type="text" name="email" placeholder="Email">
-                        <input type="password" name="contrasena" placeholder="Contraseña">
-                        <input type="submit" name="login" class="btn btn-primary btn-xl" value="Login" id="login">
+                    <form class="form-signin" method="post" id="login-form">
+                        <input type="text" name="email" placeholder="Email" id="email">
+                        <input type="password" name="contrasena" placeholder="Contraseña" id="contrasena">
+                        <input type="button" class="btn btn-primary btn-xl" value="Login" id="bntLogin" onclick="botonLogin()">
                     </form>
 
                     <div class="login-help">
@@ -217,7 +218,7 @@
         <!-- Theme JavaScript -->
         <script src="js/creative.min.js"></script>
         <script src="./app/main.js"></script>
-
+      
 
     </body>
 
