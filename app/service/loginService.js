@@ -1,6 +1,5 @@
 function botonLogin(){
     console.log('pasaporaqui');
-    $('#login-modal').modal('toggle');
       email=$("#email").val();
       contrasena=$("#contrasena").val();
        $.ajax({
@@ -10,9 +9,11 @@ function botonLogin(){
           data: "email="+email+"&contrasena="+contrasena,
           success: function(data){
               if(data.status === "success"){
+                $('#login-modal').modal('toggle');
                 location.reload();
               } else if(data.status=== "error") {
-                  alert('invalid password or user');
+                  $('#login-error').empty();
+                  $('<p>Invalid password or user</p>').appendTo('#login-error');
 
                 }
 

@@ -93,6 +93,9 @@
                     <div class="login-help">
                         <a href="loginForm.php">Register</a> - <a href="#">Forgot Password</a>
                     </div>
+                    <div id="login-error">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -218,7 +221,7 @@
         <!-- Theme JavaScript -->
         <script src="js/creative.min.js"></script>
         <script src="./app/main.js"></script>
-      
+
 
     </body>
 
