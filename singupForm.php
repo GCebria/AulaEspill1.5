@@ -48,9 +48,9 @@ Repite la contaseña<html>
     </div>
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="Mail ">Mail </label>
+      <label class="col-md-4 control-label" for="Email ">Email </label>
       <div class="col-md-6">
-        <input id="mail " name="mail " type="text" placeholder="Mail " class="form-control input-md" required="">
+        <input id="email " name="email " type="text" placeholder="Mail " class="form-control input-md" required="">
 
       </div>
     </div>
