@@ -1,4 +1,4 @@
-Repite la contaseña<html>
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,7 +23,7 @@ Repite la contaseña<html>
     <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
-    <form class="form-horizontal" method="post" action="createAlumno.php">
+    <form class="form-horizontal" method="post">
     <fieldset>
 
     <!-- Form Name -->
@@ -93,11 +93,15 @@ Repite la contaseña<html>
     <div class="form-group">
       <label class="col-md-4 control-label" for=""></label>
       <div class="col-md-4">
-        <button id="" name="" class="btn btn-success">Enviar</button>
+        <button id="btnCrearAlumno" name="" class="btn btn-success">Enviar</button>
       </div>
     </div>
 
     </fieldset>
     </form>
+    <script src="assets/lib/jquery/jquery.js"></script>
+    <script src="./app/main.js"></script>
+
+
   </body>
 </html>
