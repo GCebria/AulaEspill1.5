@@ -1,4 +1,4 @@
-<html>
+Repite la contaseña<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,71 +31,69 @@
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="Company Name">Company Name</label>
+      <label class="col-md-4 control-label" for="Nombre">Nombre</label>
       <div class="col-md-6">
-      <input id="Company Name" name="Company Name" type="text" placeholder="Company Name" class="form-control input-md" required="">
+      <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md" required="">
 
       </div>
     </div>
 
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Apellidos">Apellidos</label>
+      <div class="col-md-6">
+        <input id="apellidos" name="apellidos" type="text" placeholder="Apellidos" class="form-control input-md" required="">
+
+      </div>
+    </div>
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Mail ">Mail </label>
+      <div class="col-md-6">
+        <input id="mail " name="mail " type="text" placeholder="Mail " class="form-control input-md" required="">
+
+      </div>
+    </div>
+
+    <!-- Contraseña input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Contraseña">Contraseña</label>
+      <div class="col-md-6">
+        <input id="contrasena" name="contrasena" type="contrasena" placeholder="Contraseña" class="form-control input-md" required="">
+
+      </div>
+    </div>
+
+    <!-- Contraseña input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Password Again">Repite la contaseña</label>
+      <div class="col-md-6">
+        <input id="recontrasena" name="recontrasena" type="password" placeholder="Repite la contaseña" class="form-control input-md" required="">
+
+      </div>
+    </div>
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Teléfono">Teléfono</label>
+      <div class="col-md-6">
+      <input id="telefono" name="telefono" type="text" placeholder="Teléfono" class="form-control input-md" required="">
+
+      </div>
+    </div>
     <!-- Textarea -->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="Address">Address</label>
+      <label class="col-md-4 control-label" for="Dirección">Dirección</label>
       <div class="col-md-4">
-        <textarea class="form-control" id="Address" name="Address">Address</textarea>
+        <textarea class="form-control" id="direccion" name="direccion">Dirección</textarea>
       </div>
     </div>
 
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="User Name">User Name</label>
-      <div class="col-md-6">
-      <input id="User Name" name="User Name" type="text" placeholder="User Name" class="form-control input-md" required="">
-
-      </div>
-    </div>
-
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="User Id">User Id</label>
-      <div class="col-md-6">
-      <input id="User Id" name="User Id" type="text" placeholder="User Id" class="form-control input-md" required="">
-
-      </div>
-    </div>
-
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="Mail Id ">Mail Id </label>
-      <div class="col-md-6">
-      <input id="Mail Id " name="Mail Id " type="text" placeholder="Mail Id " class="form-control input-md" required="">
-
-      </div>
-    </div>
-
-    <!-- Password input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="Password">Password</label>
-      <div class="col-md-6">
-        <input id="Password" name="Password" type="password" placeholder="Password" class="form-control input-md" required="">
-
-      </div>
-    </div>
-
-    <!-- Password input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="Password Again">Re enter Password</label>
-      <div class="col-md-6">
-        <input id="Password Again" name="Password Again" type="password" placeholder="Re enter Password" class="form-control input-md" required="">
-
-      </div>
-    </div>
 
     <!-- Button -->
     <div class="form-group">
       <label class="col-md-4 control-label" for=""></label>
       <div class="col-md-4">
-        <button id="" name="" class="btn btn-success">Button</button>
+        <button id="" name="" class="btn btn-success">Enviar</button>
       </div>
     </div>
 
