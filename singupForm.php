@@ -23,7 +23,7 @@ Repite la contaseña<html>
     <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post" action="createAlumno.php">
     <fieldset>
 
     <!-- Form Name -->
