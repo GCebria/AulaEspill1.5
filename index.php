@@ -52,7 +52,7 @@
                 <a class="navbar-brand page-scroll" href="#page-top"  >Espill</a>
                 <div class="collapse navbar-collapse" id="navbarExample">
                     <ul class="navbar-nav ml-auto">
-                      <?php if(!isset($_SESSION['email'])){
+                      <?php if(!isset($_SESSION['nombre'])){
 			                  ?>
                         <li class="nav-item">
                           <a class="nav-link page-scroll" data-toggle="modal" data-target="#login-modal">Login</a>
@@ -168,10 +168,12 @@
         </section>
 
         <section class="no-padding" id="cursos">
-            <!--<div class="container-fluid">
-            --><div class="row no-gutter popup-gallery" id="cursosIndex">
-
-                </div>
+            <!--<div class="container-fluid
+            -->
+            <div class="row">
+              <div class="row no-gutter popup-gallery" id="cursosIndex">
+              </div>
+            </div>
             <!--</div>-->
         </section>
 
