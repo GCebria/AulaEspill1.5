@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <?php
+session_start();
 $id = $_GET['id'];
 $mysqli=mysqli_connect('localhost','root','','aulaespill');
 
@@ -53,7 +54,7 @@ $num_row = mysqli_num_rows($result);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="index.php">Aula Espill</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -69,8 +70,18 @@ $num_row = mysqli_num_rows($result);
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+								  <?php if(!isset($_SESSION['nombre'])){?>
                   <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+									<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+								  <?php }else {?>
+									<li><a href="#">
+										<span class="glyphicon glyphicon-user"> </span>
+										<?php echo $_SESSION['nombre']?>
+											</a></li>
+									<li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> ¿No eres tu?</a></li>
+
+									<?php } ?>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

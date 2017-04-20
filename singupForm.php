@@ -15,9 +15,9 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-    <!-- Plugin CSS -->
+    <!-- Plugin CSS
     <link href="assets/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
-
+ -->
     <!-- Theme CSS -->
     <link href="assets/css/creative.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
@@ -48,9 +48,9 @@
     </div>
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="Email ">Email </label>
+      <label class="col-md-4 control-label" for="Email">Email </label>
       <div class="col-md-6">
-        <input id="email " name="email " type="text" placeholder="Mail " class="form-control input-md" required="">
+        <input id="email" name="email" type="text" placeholder="Mail" class="form-control input-md" required="">
 
       </div>
     </div>
@@ -59,7 +59,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="Contraseña">Contraseña</label>
       <div class="col-md-6">
-        <input id="contrasena" name="contrasena" type="contrasena" placeholder="Contraseña" class="form-control input-md" required="">
+        <input id="contrasena" name="contrasena" type="password" placeholder="Contraseña" class="form-control input-md" required="">
 
       </div>
     </div>
@@ -84,7 +84,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="Dirección">Dirección</label>
       <div class="col-md-4">
-        <textarea class="form-control" id="direccion" name="direccion">Dirección</textarea>
+        <textarea class="form-control" id="direccion" name="direccion" placeholder="Dirección"></textarea>
       </div>
     </div>
 
@@ -93,12 +93,13 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for=""></label>
       <div class="col-md-4">
-        <button id="btnCrearAlumno" name="" class="btn btn-success">Enviar</button>
+        <input type="button" id="btnCrearAlumno" value="Enviar" class="btn btn-success" onclick="crearAlumno()"></button>
       </div>
     </div>
 
     </fieldset>
     </form>
+
     <script src="assets/lib/jquery/jquery.js"></script>
     <script src="./app/main.js"></script>
 

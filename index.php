@@ -18,9 +18,9 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-        <!-- Plugin CSS -->
+        <!-- Plugin CSS
         <link href="assets/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
-
+-->
         <!-- Theme CSS -->
         <link href="assets/css/creative.css" rel="stylesheet">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
@@ -91,7 +91,7 @@
                     </form>
 
                     <div class="login-help">
-                        <a href="loginForm.php">Register</a> - <a href="#">Forgot Password</a>
+                        <a href="singupForm.php">Register</a> - <a href="#">Forgot Password</a>
                     </div>
                     <div id="login-error">
 

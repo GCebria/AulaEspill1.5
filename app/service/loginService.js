@@ -1,5 +1,5 @@
 function botonLogin(){
-    console.log('pasaporaqui');
+  console.log('pasaporaqui');
     $('#login-error').empty();
       email=$("#email").val();
       contrasena=$("#contrasena").val();

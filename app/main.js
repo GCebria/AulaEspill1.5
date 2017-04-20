@@ -8,28 +8,21 @@ $(document).ready(function(){
  $.getScript("app/service/loginService.js", function(){
   });
 
-$('#btnCrearAlumno').click(function(){
-  $.ajax({
-     type: "POST",
-     dataType: 'json',
-     url: 'http://localhost/api-slim/api-alumnos.php/alumnos',
-     data: "nombre="+nombre+
-     "$apellidos="+apellidos+
-     "$telefono="+telefono+
-     "$email="+email+
-     "&contrasena="+contrasena+
-     "$direccion="+direccion,
-     success: function(data){
-         if(data.status === "success"){
-           alert('alumno insertado');
-           location.reload();
-         } else if(data.status=== "error") {
-             $('<p>Invalid password or user</p>').appendTo('#login-error');
+  $.getScript("app/service/crearAlumno.js", function(){
+   });
 
-           }
 
-         }
-});
-});
+/*
+  function Alumno(nombre, apellidos, telefono, email, contrasena, direccion){
+    this.nombre = nombre;
+    this.apellidos = apellidos;
+    this.telefono  = telefono;
+    this.email = email;
+    this.contrasena = contrasena;
+    this.direccion = direccion;
+  }*/
+
+
+
 
 });
