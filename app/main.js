@@ -11,6 +11,10 @@ $(document).ready(function(){
   $.getScript("app/service/crearAlumno.js", function(){
    });
 
+   $.getScript("app/model/carrito.js", function(){
+     
+
+   });
 
 /*
   function Alumno(nombre, apellidos, telefono, email, contrasena, direccion){

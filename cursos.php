@@ -12,6 +12,12 @@ $num_row = mysqli_num_rows($result);
 		if( !$num_row >=1 ) {
       echo 'error 500';
 		}
+
+case "anyadeCarro":
+	$cursoPorId = $db_handle->runQuery("SELECT * FROM cursos WHERE id='" . $_GET["id"] . "'");
+	$cursoArray = array($cursoPorId[0]["code"]=>array('nombre'=>$cursoPorId[0]["nombre"], 'precio'=>$cursoPorId[0]["precio"]));
+	$_SESSION["carroCompra"] = array_merge($_SESSION["cart_item"],$cursoArray);
+
 ?>
 
 <html lang="en">
@@ -74,8 +80,7 @@ $num_row = mysqli_num_rows($result);
                   <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 									<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 								  <?php }else {?>
-									<li><a href="#"><span class="glyphicon glyphicon
-										-shopping-cart"></span></a></li>
+									<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 									<li><a href="#">
 										<span class="glyphicon glyphicon-user"> </span>
 										<?php echo $_SESSION['nombre']?>
@@ -94,6 +99,7 @@ $num_row = mysqli_num_rows($result);
     <div class="container" >
 
       <div id="cursoPrincipal">
+			 <form method="post" action="curso.php?action=anyadeCarro&id=<?php echo $row['id']; ?>">
             <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header"><?= $row['nombre']?>
@@ -101,7 +107,6 @@ $num_row = mysqli_num_rows($result);
             </div>
         </div>
         <!-- /.row -->
-
         <!-- Portfolio Item Row -->
         <div class="row">
 
@@ -118,9 +123,12 @@ $num_row = mysqli_num_rows($result);
                     <li>Precio: <?= $row['precio']?> €</li>
                     <li>Consectetur</li>
                     <li>Adipiscing Elit</li>
+
                 </ul>
+								<div><input type="button" class="btn btn-success btn-xl" value="Comprar" onclick="anyadeCarrito("+<?= $row['id']?>+")"></div>
                 </div>
           </div>
+				 </form>
         </div>
 
         <div class="row" id="cursosCursos">

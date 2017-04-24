@@ -85,9 +85,8 @@ function cargarCursoSelecionado(curso){
                         "<li>Precio: "+curso.precio+" €</li>"+
                         "<li>Consectetur</li>"+
                         "<li>Adipiscing Elit</li>"+
-                        "<li>Adipiscing Elit</li>"+
-                        "<li><input type='button' class='btn btn-success btn-xl' value='Comprar' id='bntLogin' onclick='botonLogin()'></li>"+
                       "</ul>"+
+                      "<div><input type='button' class='btn btn-success btn-xl' value='Comprar' id='bntLogin' onclick='anyadeCarrito("+curso+")'></div>"+
                   "</div>"+
                   "</div>";
 
