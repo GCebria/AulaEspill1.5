@@ -74,7 +74,8 @@ $num_row = mysqli_num_rows($result);
                   <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 									<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 								  <?php }else {?>
-									<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+									<li><a href="#"><span class="glyphicon glyphicon
+										-shopping-cart"></span></a></li>
 									<li><a href="#">
 										<span class="glyphicon glyphicon-user"> </span>
 										<?php echo $_SESSION['nombre']?>
