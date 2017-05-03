@@ -13,7 +13,7 @@ $num_row = mysqli_num_rows($result);
 			$_SESSION['nombre']=$row['nombre'];
 			$response['status'] = 'success';
 			$response['message'] = 'This was successful';
-
+      $_SESSION['carrito'] = null;
 		}
 		else{
 			$response['status'] = 'error';

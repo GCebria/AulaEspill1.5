@@ -12,12 +12,12 @@ $num_row = mysqli_num_rows($result);
 		if( !$num_row >=1 ) {
       echo 'error 500';
 		}
-
+/*
 case "anyadeCarro":
 	$cursoPorId = $db_handle->runQuery("SELECT * FROM cursos WHERE id='" . $_GET["id"] . "'");
 	$cursoArray = array($cursoPorId[0]["code"]=>array('nombre'=>$cursoPorId[0]["nombre"], 'precio'=>$cursoPorId[0]["precio"]));
 	$_SESSION["carroCompra"] = array_merge($_SESSION["cart_item"],$cursoArray);
-
+*/
 ?>
 
 <html lang="en">
@@ -37,6 +37,8 @@ case "anyadeCarro":
 
     <!-- Custom CSS -->
     <link href="css/portfolio-item.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -77,15 +79,16 @@ case "anyadeCarro":
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
 								  <?php if(!isset($_SESSION['nombre'])){?>
-                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-									<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
+									<li><a href="#" class="nav-link page-scroll" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 								  <?php }else {?>
-									<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+									<li><a href="#"><span class="glyphicon glyphicon-shopping-cart" data-toggle="modal" data-target="#carrito-modal"></span></a></li>
+
 									<li><a href="#">
 										<span class="glyphicon glyphicon-user"> </span>
 										<?php echo $_SESSION['nombre']?>
 											</a></li>
-									<li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> ¿No eres tu?</a></li>
+									<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> ¿No eres tu?</a></li>
 									<?php } ?>
 
                 </ul>
@@ -94,6 +97,75 @@ case "anyadeCarro":
         </div>
         <!-- /.container -->
     </nav>
+
+		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+				<div class="modal-dialog">
+						<div class="loginmodal-container">
+								<h1>Iniciar sesión</h1><br>
+								<form class="form-signin" method="post" id="login-form">
+										<input type="text" name="email" placeholder="Email" id="email">
+										<input type="password" name="contrasena" placeholder="Contraseña" id="contrasena">
+										<input type="button" class="btn btn-primary btn-xl" value="Login" id="bntLogin" onclick="botonLogin()">
+								</form>
+								<div class="login-help">
+										<a href="singupForm.php">Register</a> - <a href="#">Forgot Password</a>
+								</div>
+								<div id="login-error">
+								</div>
+						</div>
+				</div>
+		</div>
+
+		<div class="modal fade" id="carrito-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+				<div class="modal-dialog">
+			<div class="carromodal-container">
+		<table id="cart" class="table table-hover table-condensed">
+	    				<thead>
+							<tr>
+								<th style="width:50%">Curso</th>
+								<th style="width:10%">Precio</th>
+								<th style="width:8%">Quantity</th>
+								<th style="width:22%" class="text-center">Subtotal</th>
+								<th style="width:10%"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-th="Product">
+									<div class="row">
+										<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
+										<div class="col-sm-10">
+											<h4 class="nomargin">Product 1</h4>
+											<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
+										</div>
+									</div>
+								</td>
+								<td data-th="Price">$1.99</td>
+								<td data-th="Quantity">
+									<input type="number" class="form-control text-center" value="1">
+								</td>
+								<td data-th="Subtotal" class="text-center">1.99</td>
+								<td class="actions" data-th="">
+									<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+									<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+								</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr class="visible-xs">
+								<td class="text-center"><strong>Total 1.99</strong></td>
+							</tr>
+							<tr>
+								<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+								<td colspan="2" class="hidden-xs"></td>
+								<td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+								<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
 
     <!-- Page Content -->
     <div class="container" >
@@ -125,7 +197,11 @@ case "anyadeCarro":
                     <li>Adipiscing Elit</li>
 
                 </ul>
-								<div><input type="button" class="btn btn-success btn-xl" value="Comprar" onclick="anyadeCarrito("+<?= $row['id']?>+")"></div>
+								 <?php if(!isset($_SESSION['nombre'])){?>
+									 <div><input type="button" class="btn btn-success btn-xl" value="Comprar" onclick="alert('No puedes comprar sin registrarte')"></div>
+								<?php }else{?>
+									<div><input type="button" class="btn btn-success btn-xl" value="Comprar" href="carrito.php" onclick="anyadeCarrito("+<?= $row['id']?>+")"></div>
+								<?php }?>
                 </div>
           </div>
 				 </form>
@@ -147,7 +223,7 @@ case "anyadeCarro":
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Espill 2017</p>
                 </div>
             </div>
             <!-- /.row -->

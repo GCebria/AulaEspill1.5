@@ -43,7 +43,6 @@
 
     <body id="page-top">
 
-        <!-- Navigation -->
         <nav id="mainNav" class="navbar fixed-top navbar-toggleable-md navbar-light">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -79,7 +78,6 @@
             </div>
         </nav>
 
-
         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
             <div class="modal-dialog">
                 <div class="loginmodal-container">
@@ -89,12 +87,10 @@
                         <input type="password" name="contrasena" placeholder="Contraseña" id="contrasena">
                         <input type="button" class="btn btn-primary btn-xl" value="Login" id="bntLogin" onclick="botonLogin()">
                     </form>
-
                     <div class="login-help">
                         <a href="singupForm.php">Register</a> - <a href="#">Forgot Password</a>
                     </div>
                     <div id="login-error">
-
                     </div>
                 </div>
             </div>
@@ -106,7 +102,7 @@
                     <h1 id="homeHeading">Bienvenido a Aula Espill</h1>
                     <hr>
                     <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                    <a href="cursos.php" class="btn btn-primary btn-xl page-scroll">Ir a cursos</a>
+                    <a href="cursos.php?id=1" class="btn btn-primary btn-xl page-scroll">Ir a cursos</a>
                 </div>
             </div>
         </header>
@@ -137,7 +133,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="service-box">
-                            <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
+                            <i class="fa fa-4x fa-clock-o text-primary sr-icons"></i>
                             <h3>Estudiar a tu ritmo</h3>
                             <p class="text-muted">Los cursos están configurados para ser usados online</p>
                         </div>
@@ -180,8 +176,8 @@
         <aside class="bg-dark">
             <div class="container text-center">
                 <div class="call-to-action">
-                    <h2>Free Download at Start Bootstrap!</h2>
-                    <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">Download Now!</a>
+                    <h2>Accede al resto de cursos!</h2>
+                    <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">Ir a cursos</a>
                 </div>
             </div>
         </aside>
