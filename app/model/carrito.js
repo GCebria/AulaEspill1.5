@@ -1,14 +1,10 @@
-function Carrito (fecha, cliente){
-this.cliente=cliente;
-this.fecha=fecha;
+function Carrito (){
 this.cursos=[];
 this.total=0;
 }
 
-Carrito.prototype.anyade=function(articulo)
-{
+Carrito.prototype.anyade=function(articulo){
 this.articulos.push(articulo);
-
 }
 
 Carrito.prototype.mostrar=function(){
@@ -26,14 +22,13 @@ Carrito.prototype.mostrar=function(){
 alert(ticket);
 }
 
-Carrito.prototype.totalcarrito=function()
-{
-	tot=0;
+Carrito.prototype.totalcarrito=function(){
+	total=0;
 	for (i=0;i<this.cursos.length;i++)
 		{
-			tot=tot+parseInt(this.cursos[i].precio);
+			total=total+parseInt(this.cursos[i].precio);
 		}
-	this.total=tot;
-	return tot
+	this.total=total;
+	return total
 
 }

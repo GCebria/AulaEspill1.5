@@ -217,7 +217,7 @@
         <script src="assets/lib/magnific-popup/jquery.magnific-popup.min.js"></script>
 -->
         <!-- Theme JavaScript -->
-        <script src="js/creative.min.js"></script>
+        <script src="assets/lib/bootstrap/js/creative.min.js"></script>
         <script src="./app/main.js"></script>
 
 

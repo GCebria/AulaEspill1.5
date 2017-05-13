@@ -1,9 +1,6 @@
+
 $(document).ready(function(){
 
-
-  $.getScript("app/service/cursoService.js", function(){
-
-  });
 
  $.getScript("app/service/loginService.js", function(){
   });
@@ -12,9 +9,15 @@ $(document).ready(function(){
    });
 
    $.getScript("app/model/carrito.js", function(){
-     
+
 
    });
+
+   $.getScript("app/service/cursoService.js", function(){
+
+   });
+
+
 
 /*
   function Alumno(nombre, apellidos, telefono, email, contrasena, direccion){
@@ -25,8 +28,6 @@ $(document).ready(function(){
     this.contrasena = contrasena;
     this.direccion = direccion;
   }*/
-
-
 
 
 });

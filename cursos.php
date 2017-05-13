@@ -2,22 +2,20 @@
 
 <?php
 session_start();
-$id = $_GET['id'];
-$mysqli=mysqli_connect('localhost','root','','aulaespill');
+$idCurso = $_GET['idCurso'];
+$url = 'http://localhost/api-slim/api-cursos.php/cursos/'.$idCurso;
+$json = file_get_contents($url);
+$row = (array) json_decode($json);
+/*$mysqli=mysqli_connect('localhost','root','','aulaespill');
 
-$query = "SELECT * FROM cursos WHERE id='$id'";
+$query = "SELECT * FROM cursos WHERE idCurso='$idCurso'";
 $result = mysqli_query($mysqli,$query)or die(mysqli_error());
 $num_row = mysqli_num_rows($result);
 		$row=mysqli_fetch_array($result);
 		if( !$num_row >=1 ) {
       echo 'error 500';
-		}
-/*
-case "anyadeCarro":
-	$cursoPorId = $db_handle->runQuery("SELECT * FROM cursos WHERE id='" . $_GET["id"] . "'");
-	$cursoArray = array($cursoPorId[0]["code"]=>array('nombre'=>$cursoPorId[0]["nombre"], 'precio'=>$cursoPorId[0]["precio"]));
-	$_SESSION["carroCompra"] = array_merge($_SESSION["cart_item"],$cursoArray);
-*/
+		}*/
+
 ?>
 
 <html lang="en">
@@ -38,14 +36,6 @@ case "anyadeCarro":
     <!-- Custom CSS -->
     <link href="css/portfolio-item.css" rel="stylesheet">
 		<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -130,17 +120,20 @@ case "anyadeCarro":
 							</tr>
 						</thead>
 						<tbody>
+							<?php if(isset($_SESSION['carrito'])){
+								foreach ($_SESSION['carrito'] as $curso){
+								?>
 							<tr>
 								<td data-th="Product">
 									<div class="row">
 										<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
 										<div class="col-sm-10">
-											<h4 class="nomargin">Product 1</h4>
+											<h4 class="nomargin"><?php $curso['nombre'];?></h4>
 											<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
 										</div>
 									</div>
 								</td>
-								<td data-th="Price">$1.99</td>
+								<td data-th="Price"><?php $curso['precio'];?></td>
 								<td data-th="Quantity">
 									<input type="number" class="form-control text-center" value="1">
 								</td>
@@ -150,6 +143,9 @@ case "anyadeCarro":
 									<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
 								</td>
 							</tr>
+							<?php
+						};
+						}?>
 						</tbody>
 						<tfoot>
 							<tr class="visible-xs">
@@ -171,10 +167,10 @@ case "anyadeCarro":
     <div class="container" >
 
       <div id="cursoPrincipal">
-			 <form method="post" action="curso.php?action=anyadeCarro&id=<?php echo $row['id']; ?>">
+			 <form method="post" action="carrito.php?id=<? = $row['idCurso']; ?>">
             <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header"><?= $row['nombre']?>
+                <h1 class="page-header"><?= $row['nombre'];?>
                 </h1>
             </div>
         </div>
@@ -188,7 +184,7 @@ case "anyadeCarro":
 
             <div class="col-md-4">
                 <h3>Descripción del curso</h3>
-                <p><?= $row['descripcion']?></p>
+                <p><? $row['descripcion']?></p>
                 <h3>Detalles</h3>
                 <ul>
                   <li>Tutor: <?= $row['tutor']?></li>
@@ -200,7 +196,7 @@ case "anyadeCarro":
 								 <?php if(!isset($_SESSION['nombre'])){?>
 									 <div><input type="button" class="btn btn-success btn-xl" value="Comprar" onclick="alert('No puedes comprar sin registrarte')"></div>
 								<?php }else{?>
-									<div><input type="button" class="btn btn-success btn-xl" value="Comprar" href="carrito.php" onclick="anyadeCarrito("+<?= $row['id']?>+")"></div>
+									<div><input type="submit" class="btn btn-success btn-xl" value="Comprar"></div>
 								<?php }?>
                 </div>
           </div>
@@ -236,9 +232,9 @@ case "anyadeCarro":
     <script src="assets/lib/jquery/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
 
-    <script src="app/main.js"></script>
+		<script src="./app/main.js"></script>
 
 
 </body>
