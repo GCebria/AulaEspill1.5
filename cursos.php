@@ -29,9 +29,10 @@ $num_row = mysqli_num_rows($result);
     <meta name="author" content="">
 
     <title>Portfolio Item - Start Bootstrap Template</title>
-
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 
     <!-- Custom CSS -->
     <link href="css/portfolio-item.css" rel="stylesheet">
@@ -42,43 +43,38 @@ $num_row = mysqli_num_rows($result);
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">Aula Espill</a>
-            </div>
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#">Aula Espill</a>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li>
-                        <a href="#">Services</a>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
                     </li>
-                    <li>
-                        <a href="#">Contact</a>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#">Disabled</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
 								  <?php if(!isset($_SESSION['nombre'])){?>
                   <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li>
-									<li><a href="#" class="nav-link page-scroll" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-								  <?php }else {?>
-									<li><a href="#"><span class="glyphicon glyphicon-shopping-cart" data-toggle="modal" data-target="#carrito-modal"></span></a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-log-in" data-toggle="modal" data-target="#login-modal"></span> Login</a></li>
+
+                  <?php }else {?>
+									<li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-shopping-cart" data-toggle="modal" data-target="#carrito-modal"></span></a></li>
 
 									<li><a href="#">
 										<span class="glyphicon glyphicon-user"> </span>
 										<?php echo $_SESSION['nombre']?>
 											</a></li>
-									<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> ¿No eres tu?</a></li>
+									<li><a href="logout.php" ><span class="glyphicon glyphicon-log-out"></span> ¿No eres tu?</a></li>
 									<?php } ?>
 
                 </ul>
@@ -88,80 +84,52 @@ $num_row = mysqli_num_rows($result);
         <!-- /.container -->
     </nav>
 
-		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-				<div class="modal-dialog">
-						<div class="loginmodal-container">
-								<h1>Iniciar sesión</h1><br>
-								<form class="form-signin" method="post" id="login-form">
-										<input type="text" name="email" placeholder="Email" id="email">
-										<input type="password" name="contrasena" placeholder="Contraseña" id="contrasena">
-										<input type="button" class="btn btn-primary btn-xl" value="Login" id="bntLogin" onclick="botonLogin()">
-								</form>
-								<div class="login-help">
-										<a href="singupForm.php">Register</a> - <a href="#">Forgot Password</a>
-								</div>
-								<div id="login-error">
-								</div>
-						</div>
-				</div>
-		</div>
 
-		<div class="modal fade" id="carrito-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-				<div class="modal-dialog">
-			<div class="carromodal-container">
-		<table id="cart" class="table table-hover table-condensed">
-	    				<thead>
-							<tr>
-								<th style="width:50%">Curso</th>
-								<th style="width:10%">Precio</th>
-								<th style="width:8%">Quantity</th>
-								<th style="width:22%" class="text-center">Subtotal</th>
-								<th style="width:10%"></th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php if(isset($_SESSION['carrito'])){
-								foreach ($_SESSION['carrito'] as $curso){
-								?>
-							<tr>
-								<td data-th="Product">
-									<div class="row">
-										<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
-										<div class="col-sm-10">
-											<h4 class="nomargin"><?php $curso['nombre'];?></h4>
-											<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
-										</div>
-									</div>
-								</td>
-								<td data-th="Price"><?php $curso['precio'];?></td>
-								<td data-th="Quantity">
-									<input type="number" class="form-control text-center" value="1">
-								</td>
-								<td data-th="Subtotal" class="text-center">1.99</td>
-								<td class="actions" data-th="">
-									<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-									<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-								</td>
-							</tr>
-							<?php
-						};
-						}?>
-						</tbody>
-						<tfoot>
-							<tr class="visible-xs">
-								<td class="text-center"><strong>Total 1.99</strong></td>
-							</tr>
-							<tr>
-								<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-								<td colspan="2" class="hidden-xs"></td>
-								<td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
-								<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
-							</tr>
-						</tfoot>
-					</table>
-				</div>
-			</div>
-		</div>
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <h1>Iniciar sesión</h1><br>
+                <form class="form-signin" method="post" id="login-form">
+                    <input type="text" name="email" placeholder="Email" id="email">
+                    <input type="password" name="contrasena" placeholder="Contraseña" id="contrasena">
+                    <input type="button" class="btn btn-primary btn-xl" value="Login" id="bntLogin" onclick="botonLogin()">
+                </form>
+
+                <div class="login-help">
+                    <a href="singupForm.php">Register</a> - <a href="#">Forgot Password</a>
+                </div>
+                <div id="login-error">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+              <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+
 
     <!-- Page Content -->
     <div class="container" >
@@ -184,7 +152,7 @@ $num_row = mysqli_num_rows($result);
 
             <div class="col-md-4">
                 <h3>Descripción del curso</h3>
-                <p><? $row['descripcion']?></p>
+                <p><?= $row['descripcion']?></p>
                 <h3>Detalles</h3>
                 <ul>
                   <li>Tutor: <?= $row['tutor']?></li>
@@ -230,7 +198,7 @@ $num_row = mysqli_num_rows($result);
 
     <!-- jQuery -->
     <script src="assets/lib/jquery/jquery.js"></script>
-
+    <script src="app/service/carritoService.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
 

@@ -65,7 +65,6 @@ function seleccionarCurso(idCurso){
 }
 
 function cargarCursoSelecionado(curso){
-
           var html ="<div class='row'>"+
                       "<div class='col-lg-12'>"+
                         "<h1 class=page-header>"+curso.nombre+
@@ -86,7 +85,7 @@ function cargarCursoSelecionado(curso){
                         "<li>Consectetur</li>"+
                         "<li>Adipiscing Elit</li>"+
                       "</ul>"+
-                      "<div><input type='button' class='btn btn-success btn-xl' value='Comprar' id='bntLogin' onclick='anyadeCarrito("+curso+")'></div>"+
+                      "<div><input type='button' class='btn btn-success btn-xl' value='Comprar' id='bntComprar' onclick='anyadeCarrito("+curso.idCurso+")'></div>"+
                   "</div>"+
                   "</div>";
 

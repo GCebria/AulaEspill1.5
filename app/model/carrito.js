@@ -3,7 +3,8 @@ this.cursos=[];
 this.total=0;
 }
 
-Carrito.prototype.anyade=function(articulo){
+Carrito.prototype.anyade=function(id){
+
 this.articulos.push(articulo);
 }
 
