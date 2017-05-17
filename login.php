@@ -5,7 +5,7 @@ $contrasena = $_POST['contrasena'];
  $response = array();
  $mysqli=mysqli_connect('localhost','root','','aulaespill');
 
-$query = "SELECT * FROM alumnos WHERE email='$email' AND contrasena='$contrasena'";
+$query = "SELECT * FROM usuarios WHERE email='$email' AND contrasena='$contrasena'";
 $result = mysqli_query($mysqli,$query)or die(mysqli_error());
 $num_row = mysqli_num_rows($result);
 		$row=mysqli_fetch_array($result);
