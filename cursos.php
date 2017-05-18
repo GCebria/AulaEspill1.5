@@ -68,7 +68,7 @@ $num_row = mysqli_num_rows($result);
                   <li><a href="#"><span class="glyphicon glyphicon-log-in" data-toggle="modal" data-target="#login-modal"></span> Login</a></li>
 
                   <?php }else {?>
-									<li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-shopping-cart" data-toggle="modal" data-target="#carrito-modal"></span></a></li>
+									<li><a href="#"  ><span class="glyphicon glyphicon-shopping-cart"  data-toggle="modal" data-target="#myModal"></span></a></li>
 
 									<li><a href="#">
 										<span class="glyphicon glyphicon-user"> </span>
@@ -112,14 +112,19 @@ $num_row = mysqli_num_rows($result);
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h4 class="modal-title">Modal Header</h4>
             </div>
             <div class="modal-body">
-              <p>Some text in the modal.</p>
+              <ul  id="carrito-body">
+
+              </ul>
+              <div id="precio-total"></div>
             </div>
+
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+              <button type="button" class="btn btn-success" onclick="comprar( <?php echo $_SESSION['idUsuario']?>)">Comprar</button>
             </div>
           </div>
 
@@ -199,6 +204,8 @@ $num_row = mysqli_num_rows($result);
     <!-- jQuery -->
     <script src="assets/lib/jquery/jquery.js"></script>
     <script src="app/service/carritoService.js"></script>
+    <script src="app/service/pedidoService.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
 

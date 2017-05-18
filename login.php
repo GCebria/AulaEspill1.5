@@ -11,6 +11,7 @@ $num_row = mysqli_num_rows($result);
 		$row=mysqli_fetch_array($result);
 		if( $num_row >=1 ) {
 			$_SESSION['nombre']=$row['nombre'];
+      $_SESSION['idUsuario']=$row['idUsuario'];
 			$response['status'] = 'success';
 			$response['message'] = 'This was successful';
       $_SESSION['carrito'] = array();

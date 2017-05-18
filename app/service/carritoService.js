@@ -17,24 +17,34 @@ function anyadeCarrito(id){
       tutor: ""
     } ,
     success: function(data){
-      console.log(data.precio);
+
       carrito.cursos.push(data);
+
+      precioTotal(parseInt(data.precio));
       carrito.total = carrito.total + parseInt(data.precio);
-      console.log(carrito);
-      console.log(carrito.total);
+      html = "<li>"+ data.nombre+
+            "</li>";
+      console.log(html);
+      $(html).appendTo("#carrito-body");
     }
   });
 }
-/*
-function total(){
-    var total = 0;
-    for each (curso in carrito){
-      total = total + curso.precio;
-    }
-    alert(total);
-}*/
+function precioTotal(precio){
+    $("#precio-total").empty();
+    carrito.total = carrito.total + precio;
+    html = "<p>"+carrito.total+"</p>";
+    $(html).appendTo("#precio-total");
+  }
 
+  /*
 
 function mostrarCarrito(carrito){
-
+  alert(cursos[0].nombre);
+  for each(curso in carrito){
+    html = "<li>"+ cursos.nombre+
+          "</li>";
+    $("#carrito-body").append(html);
+  }
 };
+
+*/
