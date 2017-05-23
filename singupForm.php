@@ -15,15 +15,15 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-    <!-- Plugin CSS -->
+    <!-- Plugin CSS
     <link href="assets/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
-
+ -->
     <!-- Theme CSS -->
     <link href="assets/css/creative.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post">
     <fieldset>
 
     <!-- Form Name -->
@@ -31,75 +31,78 @@
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="Company Name">Company Name</label>
+      <label class="col-md-4 control-label" for="Nombre">Nombre</label>
       <div class="col-md-6">
-      <input id="Company Name" name="Company Name" type="text" placeholder="Company Name" class="form-control input-md" required="">
+      <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control input-md" required="">
 
       </div>
     </div>
 
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Apellidos">Apellidos</label>
+      <div class="col-md-6">
+        <input id="apellidos" name="apellidos" type="text" placeholder="Apellidos" class="form-control input-md" required="">
+
+      </div>
+    </div>
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Email">Email </label>
+      <div class="col-md-6">
+        <input id="email" name="email" type="text" placeholder="Mail" class="form-control input-md" required="">
+
+      </div>
+    </div>
+
+    <!-- Contraseña input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Contraseña">Contraseña</label>
+      <div class="col-md-6">
+        <input id="contrasena" name="contrasena" type="password" placeholder="Contraseña" class="form-control input-md" required="">
+
+      </div>
+    </div>
+
+    <!-- Contraseña input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Password Again">Repite la contaseña</label>
+      <div class="col-md-6">
+        <input id="recontrasena" name="recontrasena" type="password" placeholder="Repite la contaseña" class="form-control input-md" required="">
+
+      </div>
+    </div>
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Teléfono">Teléfono</label>
+      <div class="col-md-6">
+      <input id="telefono" name="telefono" type="text" placeholder="Teléfono" class="form-control input-md" required="">
+
+      </div>
+    </div>
     <!-- Textarea -->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="Address">Address</label>
+      <label class="col-md-4 control-label" for="Dirección">Dirección</label>
       <div class="col-md-4">
-        <textarea class="form-control" id="Address" name="Address">Address</textarea>
+        <textarea class="form-control" id="direccion" name="direccion" placeholder="Dirección"></textarea>
       </div>
     </div>
 
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="User Name">User Name</label>
-      <div class="col-md-6">
-      <input id="User Name" name="User Name" type="text" placeholder="User Name" class="form-control input-md" required="">
-
-      </div>
-    </div>
-
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="User Id">User Id</label>
-      <div class="col-md-6">
-      <input id="User Id" name="User Id" type="text" placeholder="User Id" class="form-control input-md" required="">
-
-      </div>
-    </div>
-
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="Mail Id ">Mail Id </label>
-      <div class="col-md-6">
-      <input id="Mail Id " name="Mail Id " type="text" placeholder="Mail Id " class="form-control input-md" required="">
-
-      </div>
-    </div>
-
-    <!-- Password input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="Password">Password</label>
-      <div class="col-md-6">
-        <input id="Password" name="Password" type="password" placeholder="Password" class="form-control input-md" required="">
-
-      </div>
-    </div>
-
-    <!-- Password input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="Password Again">Re enter Password</label>
-      <div class="col-md-6">
-        <input id="Password Again" name="Password Again" type="password" placeholder="Re enter Password" class="form-control input-md" required="">
-
-      </div>
-    </div>
 
     <!-- Button -->
     <div class="form-group">
       <label class="col-md-4 control-label" for=""></label>
       <div class="col-md-4">
-        <button id="" name="" class="btn btn-success">Button</button>
+        <input type="button" id="btnCrearAlumno" value="Enviar" class="btn btn-success" onclick="crearAlumno()"></button>
       </div>
     </div>
 
     </fieldset>
     </form>
+
+    <script src="assets/lib/jquery/jquery.js"></script>
+    <script src="./app/main.js"></script>
+
+
   </body>
 </html>

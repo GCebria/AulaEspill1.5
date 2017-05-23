@@ -21,8 +21,8 @@ function peticionCursos(){
 
 function procesarCursos(Curso){
 $.each(Curso, function(index, curso){
- var html = "<div class='col-lg-4 col-sm-6'  onclick='seleccionarCurso("+curso.id+")'>"+
-            "<a href='./cursos.php?id="+curso.id+"' class='portfolio-box'>"+
+ var html = "<div class='col-lg-4 col-sm-6'  onclick='seleccionarCurso("+curso.idCurso+")'>"+
+            "<a href='cursos.php?idCurso="+curso.idCurso+"' class='portfolio-box'>"+
               "<img src="+curso.foto+" class='img-fluid' alt=''>"+
                 "<div class='portfolio-box-caption'>"+
                  "<div class='portfolio-box-caption-content'>"+
@@ -40,8 +40,8 @@ $.each(Curso, function(index, curso){
      });
 
 $.each(Curso, function(index, curso){
-       var html =  "<div class='col-sm-4 col-xs-6' id="+curso.id+">"+
-       "<a href='#' onclick='seleccionarCurso("+curso.id+")'>"+
+       var html =  "<div class='col-sm-4 col-xs-6' id="+curso.idCurso+">"+
+       "<a href='#' onclick='seleccionarCurso("+curso.idCurso+")'>"+
        "<img class='img-responsive portfolio-item' src="+curso.foto+" alt=''>"+
        "</a>"+
        "</div>";
@@ -52,11 +52,11 @@ $.each(Curso, function(index, curso){
 
 }
 
-function seleccionarCurso(id){
+function seleccionarCurso(idCurso){
   $.ajax({
     type: 'get',
     dataType: 'json',
-    url: 'http://localhost/api-slim/api-cursos.php/cursos/'+id,
+    url: 'http://localhost/api-slim/api-cursos.php/cursos/'+idCurso,
     data: Curso,
     success: function(data) {
       cargarCursoSelecionado(data);
@@ -65,7 +65,6 @@ function seleccionarCurso(id){
 }
 
 function cargarCursoSelecionado(curso){
-
           var html ="<div class='row'>"+
                       "<div class='col-lg-12'>"+
                         "<h1 class=page-header>"+curso.nombre+
@@ -86,6 +85,7 @@ function cargarCursoSelecionado(curso){
                         "<li>Consectetur</li>"+
                         "<li>Adipiscing Elit</li>"+
                       "</ul>"+
+                      "<div><input type='button' class='btn btn-success btn-xl' value='Comprar' id='bntComprar' onclick='anyadeCarrito("+curso.idCurso+")'></div>"+
                   "</div>"+
                   "</div>";
 

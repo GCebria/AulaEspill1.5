@@ -18,9 +18,9 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-        <!-- Plugin CSS -->
+        <!-- Plugin CSS
         <link href="assets/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
-
+-->
         <!-- Theme CSS -->
         <link href="assets/css/creative.css" rel="stylesheet">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
@@ -52,10 +52,10 @@
                 <a class="navbar-brand page-scroll" href="#page-top"  >Espill</a>
                 <div class="collapse navbar-collapse" id="navbarExample">
                     <ul class="navbar-nav ml-auto">
-                      <?php if(!isset($_SESSION['email'])){
+                      <?php if(!isset($_SESSION['nombre'])){
 			                  ?>
                         <li class="nav-item">
-                          <a class="nav-link page-scroll" data-toggle="modal" data-target="#login-modal">Login</a>
+                          <a href="#" class="nav-link page-scroll" data-toggle="modal" data-target="#login-modal">Login</a>
                         </li>
                         <?php }else {?>
                           <li class="nav-item">
@@ -91,7 +91,7 @@
                     </form>
 
                     <div class="login-help">
-                        <a href="loginForm.php">Register</a> - <a href="#">Forgot Password</a>
+                        <a href="singupForm.php">Register</a> - <a href="#">Forgot Password</a>
                     </div>
                     <div id="login-error">
 
@@ -118,7 +118,7 @@
                         <h2 class="section-heading text-white">¿Qué es Aula Espill?</h2>
                         <hr class="light">
                         <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                        <a href="loginForm.php" class="page-scroll btn btn-default btn-xl sr-button">Registrate!</a>
+                        <a href="singupForm.php" class="page-scroll btn btn-default btn-xl sr-button">Registrate!</a>
                     </div>
                 </div>
             </div>
@@ -168,10 +168,12 @@
         </section>
 
         <section class="no-padding" id="cursos">
-            <!--<div class="container-fluid">
-            --><div class="row no-gutter popup-gallery" id="cursosIndex">
-
-                </div>
+            <!--<div class="container-fluid
+            -->
+            <div class="row">
+              <div class="row no-gutter popup-gallery" id="cursosIndex">
+              </div>
+            </div>
             <!--</div>-->
         </section>
 
@@ -219,7 +221,7 @@
         <script src="assets/lib/magnific-popup/jquery.magnific-popup.min.js"></script>
 -->
         <!-- Theme JavaScript -->
-        <script src="js/creative.min.js"></script>
+        <script src="assets/lib/bootstrap/js/creative.min.js"></script>
         <script src="./app/main.js"></script>
 
 
