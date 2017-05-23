@@ -22,7 +22,7 @@ function peticionCursos(){
 function procesarCursos(Curso){
 $.each(Curso, function(index, curso){
  var html = "<div class='col-lg-4 col-sm-6'  onclick='seleccionarCurso("+curso.idCurso+")'>"+
-            "<a href='./cursos.php?idCurso="+curso.idCurso+"' class='portfolio-box'>"+
+            "<a href='cursos.php?idCurso="+curso.idCurso+"' class='portfolio-box'>"+
               "<img src="+curso.foto+" class='img-fluid' alt=''>"+
                 "<div class='portfolio-box-caption'>"+
                  "<div class='portfolio-box-caption-content'>"+

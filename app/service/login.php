@@ -11,10 +11,16 @@ $num_row = mysqli_num_rows($result);
 		$row=mysqli_fetch_array($result);
 		if( $num_row >=1 ) {
 			$_SESSION['nombre']=$row['nombre'];
+      $_SESSION['apellidos']=$row['apellidos'];
+      $_SESSION['telefono']=$row['telefono'];
+      $_SESSION['email']=$row['email'];
+      $_SESSION['direccion']=$row['direccion'];
       $_SESSION['idUsuario']=$row['idUsuario'];
-			$response['status'] = 'success';
+      $_SESSION['rolUsuario'] = $row['rolUsuario'];
+      $response['status'] = 'success';
 			$response['message'] = 'This was successful';
       $_SESSION['carrito'] = array();
+
 		}
 		else{
 			$response['status'] = 'error';

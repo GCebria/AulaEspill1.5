@@ -55,7 +55,7 @@
                       <?php if(!isset($_SESSION['nombre'])){
 			                  ?>
                         <li class="nav-item">
-                          <a class="nav-link page-scroll" data-toggle="modal" data-target="#login-modal">Login</a>
+                          <a href="#" class="nav-link page-scroll" data-toggle="modal" data-target="#login-modal">Login</a>
                         </li>
                         <?php }else {?>
                           <li class="nav-item">
@@ -118,7 +118,7 @@
                         <h2 class="section-heading text-white">¿Qué es Aula Espill?</h2>
                         <hr class="light">
                         <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                        <a href="loginForm.php" class="page-scroll btn btn-default btn-xl sr-button">Registrate!</a>
+                        <a href="singupForm.php" class="page-scroll btn btn-default btn-xl sr-button">Registrate!</a>
                     </div>
                 </div>
             </div>

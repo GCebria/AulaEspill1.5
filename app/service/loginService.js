@@ -7,7 +7,7 @@ function botonLogin(){
 
         $.ajax({
           type: 'POST',
-          url: 'http://localhost/AulaEspill1.5/login.php',
+          url: 'http://localhost/AulaEspill1.5/app/service/login.php',
           dataType: 'json',
           data: {
             email: email,

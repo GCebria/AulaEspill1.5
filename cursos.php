@@ -28,7 +28,7 @@ $num_row = mysqli_num_rows($result);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Portfolio Item - Start Bootstrap Template</title>
+    <title>Cursos - Aula Espill</title>
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Bootstrap Core CSS -->
     <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -48,7 +48,7 @@ $num_row = mysqli_num_rows($result);
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="#">Aula Espill</a>
+          <a class="navbar-brand" href="index.php" style="padding-top: 15px">Aula Espill</a>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <ul class="navbar-nav mr-auto">
@@ -68,12 +68,20 @@ $num_row = mysqli_num_rows($result);
                   <li><a href="#"><span class="glyphicon glyphicon-log-in" data-toggle="modal" data-target="#login-modal"></span> Login</a></li>
 
                   <?php }else {?>
-									<li><a href="#"  ><span class="glyphicon glyphicon-shopping-cart"  data-toggle="modal" data-target="#myModal"></span></a></li>
-
-									<li><a href="#">
+									<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"  data-toggle="modal" data-target="#myModal"></span></a></li>
+                <?php if(($_SESSION['rolUsuario'])=='admin'){?>
+                  <li>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-key">  </span> Administrar
+                    </a>
+                  </li>
+                <?php }?>
+									<li>
+                    <a href="updateUser.php">
 										<span class="glyphicon glyphicon-user"> </span>
 										<?php echo $_SESSION['nombre']?>
-											</a></li>
+											</a>
+                    </li>
 									<li><a href="logout.php" ><span class="glyphicon glyphicon-log-out"></span> ¿No eres tu?</a></li>
 									<?php } ?>
 
@@ -85,7 +93,7 @@ $num_row = mysqli_num_rows($result);
     </nav>
 
 
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
         <div class="modal-dialog">
             <div class="loginmodal-container">
                 <h1>Iniciar sesión</h1><br>
@@ -204,12 +212,11 @@ $num_row = mysqli_num_rows($result);
     <!-- jQuery -->
     <script src="assets/lib/jquery/jquery.js"></script>
     <script src="app/service/carritoService.js"></script>
-    <script src="app/service/pedidoService.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
 
-		<script src="./app/main.js"></script>
+		<script src="app/main.js"></script>
 
 
 </body>
