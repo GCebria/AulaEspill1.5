@@ -123,7 +123,7 @@ session_start();
                                         <div class="form-group required">
                                            <label for="inputPassword3" class="col-md-4 control-label">Contraseña </label>
                                            <div class="col-md-6">
-                                              <input  id="contrasena" type="password" class="form-control"  placeholder="**********">
+                                              <input type="password" id="contrasena" type="password" class="form-control"  placeholder="*******">
                                            </div>
                                         </div>
                                         <div class="form-group">
@@ -165,7 +165,7 @@ session_start();
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
 
-		<script src="../app/main.js"></script>
+		<script src="app/main.js"></script>
 
 
 </body>

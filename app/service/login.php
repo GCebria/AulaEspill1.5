@@ -17,6 +17,8 @@ $num_row = mysqli_num_rows($result);
       $_SESSION['direccion']=$row['direccion'];
       $_SESSION['idUsuario']=$row['idUsuario'];
       $_SESSION['rolUsuario'] = $row['rolUsuario'];
+      $_SESSION['contrasena'] = $row['contrasena'];
+
       $response['status'] = 'success';
 			$response['message'] = 'This was successful';
       $_SESSION['carrito'] = array();

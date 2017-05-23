@@ -1,7 +1,7 @@
 function updateUser(idUsuario){
   $.ajax({
     type: 'put',
-    url: 'http://localhost/api-slim/api-alumnos.php/alumnos/'+idUsuario,
+    url: 'http://localhost/api-slim/api-usuarios.php/usuarios/'+idUsuario,
     dataType: 'json',
     data:{
       nombre: $("#nombre").val(),
